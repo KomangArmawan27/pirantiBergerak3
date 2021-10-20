@@ -2,26 +2,27 @@ import React, {Component} from 'react';
 
 class CardProduct extends Component{
     state = {
-        order:0
+        order:1,
+        harga:35000
     }
 
     handleCounterChange = (newValue) => {
-        this.props.onCounterChange(newValue);
+        this.props.onCounterChange(newValue)
     }
-
     handlePlus = () => {
         this.setState({
             order: this.state.order + 1
         }, () => {
             this.handleCounterChange(this.state.order);
         })
+        
     }
     handleMinus = () => {
         if(this.state.order>0){
             this.setState({
                 order: this.state.order - 1
             }, () => {
-                this.handleCounterChange(this.state.order)
+                this.handleCounterChange(this.state.order);
             })
         }
     }
@@ -32,7 +33,7 @@ class CardProduct extends Component{
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQagOLFDtZJZYCwL2K07c7whK4rd6byqNspc4FrFOpwpuo87D-iKpww0Dq1te3DjqfhR6M&usqp=CAU" alt=""/>
                 </div>
                 <p className="product-title">daging ayam</p>
-                <p className="product-price">Rp 35.000</p>
+                <p className="product-price">Rp {this.state.harga}</p>
                 <div className="counter">
                     <button className="minus" onClick={this.handleMinus}>-</button>
                     <input type="text" value={this.state.order}/>

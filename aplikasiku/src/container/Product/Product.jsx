@@ -24,7 +24,6 @@ class Product extends Component{
                         <img src="https://image.flaticon.com/icons/png/128/1179/1179970.png?ga=GA1.2.258185396.1634708439" alt=""/>
                         <div className="count">{this.state.order}</div>
                     </div>
-
                 </div>
                 <CardProduct onCounterChange={(value) => this.handleCounterChange(value)}/>
             </Fragment>
